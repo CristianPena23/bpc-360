@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diagnóstico de riesgo · BPC 360</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+
+  <!-- Estilos globales (los publica Andrés). Si aún no existe, la página funciona igual. -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/diagnostico.css">
+</head>
+<body>
+  <div class="dx-app">
+
+    <header class="dx-header">
+      <div class="dx-header__fila">
+        <a class="dx-volver" href="index.html" aria-label="Volver al inicio">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+        </a>
+        <span class="dx-header__titulo">Diagnóstico de riesgo</span>
+      </div>
+
+      <div id="dx-progreso" class="dx-progreso">
+        <div class="dx-progreso__texto">
+          <span id="dx-progreso-texto" aria-live="polite">Pregunta 1 de 6</span>
+          <span id="dx-progreso-porcentaje">0%</span>
+        </div>
+        <div class="dx-barra" role="progressbar" aria-label="Avance del diagnóstico" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="dx-barra">
+          <div class="dx-barra__relleno" id="dx-barra-relleno"></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="dx-main">
+
+      <!-- Vista 1: preguntas -->
+      <form id="dx-vista-pregunta" class="dx-vista" novalidate>
+        <fieldset class="dx-fieldset">
+          <legend class="dx-pregunta" id="dx-pregunta" tabindex="-1">
+            <span class="dx-pregunta__icono" id="dx-icono" aria-hidden="true"></span>
+            <span class="dx-pregunta__texto" id="dx-pregunta-texto">Cargando preguntas…</span>
+          </legend>
+          <div class="dx-opciones" id="dx-opciones"></div>
+        </fieldset>
+
+        <p class="dx-error" id="dx-error" role="alert" hidden></p>
+
+        <div class="dx-acciones">
+          <button type="button" class="dx-btn dx-btn--secundario" id="dx-anterior" hidden>Anterior</button>
+          <button type="submit" class="dx-btn dx-btn--primario" id="dx-siguiente" disabled>Siguiente</button>
+        </div>
+      </form>
+
+      <!-- Vista 2: resultado -->
+      <section id="dx-vista-resultado" class="dx-vista" hidden aria-labelledby="dx-resultado-titulo">
+        <div class="dx-resultado" id="dx-resultado">
+          <div class="dx-resultado__insignia" id="dx-resultado-insignia" aria-hidden="true"></div>
+          <p class="dx-resultado__etiqueta">Tu nivel de riesgo</p>
+          <h1 class="dx-resultado__titulo" id="dx-resultado-titulo" tabindex="-1">—</h1>
+          <p class="dx-resultado__texto" id="dx-resultado-texto"></p>
+
+          <div class="dx-escala" aria-hidden="true">
+            <div class="dx-escala__relleno" id="dx-escala-relleno"></div>
+          </div>
+          <p class="dx-resultado__puntaje" id="dx-resultado-puntaje"></p>
+        </div>
+
+        <div class="dx-acciones dx-acciones--columna">
+          <a class="dx-btn dx-btn--primario" href="modulo-sms.html">Empezar módulo SMS</a>
+          <button type="button" class="dx-btn dx-btn--secundario" id="dx-repetir">Repetir diagnóstico</button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Menú inferior TEMPORAL: cuando Andrés publique js/nav.js, este bloque se reemplaza. -->
+    <nav class="dx-nav" aria-label="Navegación principal">
+      <a href="index.html">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg>
+        Inicio
+      </a>
+      <a href="diagnostico.html" aria-current="page">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 5h10M9 12h10M9 19h10M4 5h1M4 12h1M4 19h1"></path></svg>
+        Diagnóstico
+      </a>
+      <a href="modulo-sms.html">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"></path><path d="M8 7h6"></path></svg>
+        Módulos
+      </a>
+      <a href="progreso.html">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"></path></svg>
+        Progreso
+      </a>
+    </nav>
+
+  </div>
+
+  <script src="js/diagnostico.js"></script>
+</body>
+</html>
