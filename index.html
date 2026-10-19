@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BPC 360 · Protégete en tu ciudad conectada</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+  <div class="bpc-app">
+
+    <header class="ini-header">
+      <div class="ini-marca">
+        <span class="ini-logo" aria-hidden="true">360</span>
+        <span class="ini-marca__nombre">BPC 360</span>
+      </div>
+
+      <a class="ini-puntos" id="ini-puntos-enlace" href="progreso.html" aria-label="Ver mi progreso: 0 puntos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"></path></svg>
+        <span><span id="ini-puntos">0</span> pts</span>
+      </a>
+    </header>
+
+    <main class="ini-main">
+
+      <section class="ini-hero" aria-labelledby="ini-titulo">
+        <p class="ini-hero__etiqueta">Ciberseguridad para tu ciudad</p>
+        <h1 id="ini-titulo">Aprende a protegerte en una ciudad conectada</h1>
+        <p class="ini-hero__texto">Descubre qué tan expuesto estás y practica con situaciones reales.</p>
+        <a class="bpc-btn bpc-btn--acento" id="ini-cta" href="diagnostico.html">Haz tu diagnóstico</a>
+        <p class="ini-hero__nivel" id="ini-nivel" hidden></p>
+      </section>
+
+      <section aria-labelledby="ini-modulos-titulo">
+        <div class="ini-seccion__cabecera">
+          <h2 id="ini-modulos-titulo">Módulos de aprendizaje</h2>
+          <span>1 de 3 disponible</span>
+        </div>
+
+        <ul class="ini-modulos">
+          <!-- Módulo disponible -->
+          <li>
+            <a class="ini-modulo ini-modulo--activo" id="ini-modulo-sms" href="modulo-sms.html">
+              <span class="ini-modulo__icono" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>
+              </span>
+              <span class="ini-modulo__texto">
+                <span class="ini-modulo__titulo">Mensajes fraudulentos</span>
+                <span class="ini-modulo__meta">SMS y WhatsApp · 10 min</span>
+              </span>
+              <span class="ini-modulo__estado" id="ini-modulo-sms-estado">Empezar</span>
+            </a>
+          </li>
+
+          <!-- Módulos bloqueados -->
+          <li class="ini-modulo ini-modulo--bloqueado">
+            <span class="ini-modulo__icono" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2M18 14h2v2M14 18h2v2M18 20h2"></path></svg>
+            </span>
+            <span class="ini-modulo__texto">
+              <span class="ini-modulo__titulo">Códigos QR falsos</span>
+              <span class="ini-modulo__meta">Próximamente</span>
+            </span>
+            <svg class="ini-modulo__candado" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" role="img" aria-label="Bloqueado"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+          </li>
+
+          <li class="ini-modulo ini-modulo--bloqueado">
+            <span class="ini-modulo__icono" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"></path><circle cx="12" cy="19.5" r="1"></circle></svg>
+            </span>
+            <span class="ini-modulo__texto">
+              <span class="ini-modulo__titulo">WiFi público</span>
+              <span class="ini-modulo__meta">Próximamente</span>
+            </span>
+            <svg class="ini-modulo__candado" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" role="img" aria-label="Bloqueado"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <nav class="bpc-nav" data-bpc-nav aria-label="Navegación principal"></nav>
+
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/inicio.js"></script>
+</body>
+</html>

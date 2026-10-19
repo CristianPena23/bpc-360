@@ -198,7 +198,13 @@
   }
 
   function guardarNivel(idNivel) {
-    // localStorage puede fallar (modo privado, datos bloqueados): la app debe seguir funcionando
+    // Lo normal: guardar con js/storage.js (clave bpc_diagnostico)
+    if (window.BPC && typeof window.BPC.setDiagnostico === 'function') {
+      window.BPC.setDiagnostico(idNivel);
+      return;
+    }
+    // Respaldo si storage.js no está cargado. localStorage puede fallar
+    // (modo privado, datos bloqueados): la app debe seguir funcionando
     try {
       localStorage.setItem(CLAVE_STORAGE, idNivel);
     } catch (e) {
