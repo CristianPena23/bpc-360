@@ -1,0 +1,317 @@
+/* ==========================================================
+   BPC 360 · Mi progreso y logros (Samuel)
+   Clases con prefijo "pg-". Los colores y medidas vienen de las
+   variables de css/styles.css.
+   ========================================================== */
+
+.pg-header {
+  padding: 24px 20px 4px;
+}
+
+.pg-header__titulo {
+  margin: 0;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.pg-header__titulo:focus { outline: none; }
+
+.pg-main {
+  flex: 1;
+  padding: 12px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pg-subtitulo {
+  margin: 6px 0 10px;
+  font-size: 16px;
+}
+
+/* ---------- Resumen ---------- */
+
+.pg-resumen {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #FFFFFF;
+  background: var(--color-oscuro);
+  border-radius: var(--radio-lg);
+}
+
+.pg-resumen__puntos {
+  width: 96px;
+  height: 96px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid var(--color-primario);
+  border-radius: 50%;
+}
+
+.pg-resumen__puntos strong {
+  font-family: var(--fuente-titulos);
+  font-size: 26px;
+  line-height: 1;
+}
+
+.pg-resumen__puntos span {
+  margin-top: 2px;
+  font-size: 11px;
+  color: #CBD5E1;
+}
+
+.pg-resumen__detalle {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pg-resumen__etiqueta {
+  font-size: 13px;
+  color: #CBD5E1;
+}
+
+.pg-resumen__detalle strong {
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.pg-barra {
+  height: 8px;
+  margin-top: 4px;
+  overflow: hidden;
+  background: #1E3A8A;
+  border-radius: 999px;
+}
+
+.pg-barra__relleno {
+  height: 100%;
+  width: 0;
+  background: var(--color-acento-sobre-oscuro);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+/* ---------- Nivel de riesgo ---------- */
+
+.pg-nivel {
+  --pg-nivel-fondo: var(--color-borde-suave);
+  --pg-nivel-texto: var(--color-texto);
+
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde-suave);
+  border-radius: var(--radio-md);
+}
+
+.pg-nivel[data-nivel="bajo"] {
+  --pg-nivel-fondo: var(--color-bajo-fondo);
+  --pg-nivel-texto: var(--color-bajo-texto);
+}
+
+.pg-nivel[data-nivel="medio"] {
+  --pg-nivel-fondo: var(--color-medio-fondo);
+  --pg-nivel-texto: var(--color-medio-texto);
+}
+
+.pg-nivel[data-nivel="alto"] {
+  --pg-nivel-fondo: var(--color-alto-fondo);
+  --pg-nivel-texto: var(--color-alto-texto);
+}
+
+.pg-nivel__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pg-nivel__etiqueta {
+  font-size: 13px;
+  color: var(--color-texto-suave);
+}
+
+.pg-nivel__valor {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.pg-nivel[data-nivel] .pg-nivel__valor { color: var(--pg-nivel-texto); }
+
+.pg-nivel__insignia {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pg-nivel-texto);
+  background: var(--pg-nivel-fondo);
+  border-radius: 50%;
+}
+
+.pg-nivel__insignia:empty { display: none; }
+
+.pg-nivel__enlace {
+  margin-top: -4px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primario-fuerte);
+}
+
+/* ---------- Insignias ---------- */
+
+.pg-insignias {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.pg-insignia {
+  padding: 14px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde-suave);
+  border-radius: var(--radio-md);
+}
+
+.pg-insignia--ganada {
+  border: 2px solid var(--color-primario);
+  padding: 13px 5px;
+}
+
+.pg-insignia__icono {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-texto-suave);
+  background: var(--color-borde-suave);
+  border-radius: 50%;
+}
+
+.pg-insignia--ganada .pg-insignia__icono {
+  color: var(--color-primario-fuerte);
+  background: var(--color-primario-claro);
+}
+
+.pg-insignia__nombre {
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--color-texto-suave);
+}
+
+.pg-insignia--ganada .pg-insignia__nombre {
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+/* ---------- Módulos ---------- */
+
+.pg-modulos {
+  margin: 0;
+  padding: 4px 16px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde-suave);
+  border-radius: var(--radio-md);
+}
+
+.pg-modulo {
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--color-texto);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.pg-modulos li:last-child .pg-modulo { border-bottom: 0; }
+
+.pg-modulo__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pg-modulo__detalle {
+  font-size: 12px;
+  color: var(--color-texto-suave);
+}
+
+.pg-modulo__estado {
+  flex: none;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-texto-suave);
+  background: var(--color-borde-suave);
+  border-radius: 999px;
+}
+
+.pg-modulo__estado--completado {
+  color: var(--color-bajo-texto);
+  background: var(--color-bajo-fondo);
+}
+
+.pg-modulo__estado--progreso {
+  color: var(--color-primario-fuerte);
+  background: var(--color-primario-claro);
+}
+
+/* ---------- Diálogo de confirmación ---------- */
+
+.pg-dialogo {
+  width: min(92vw, 380px);
+  padding: 22px;
+  color: var(--color-texto);
+  background: var(--color-superficie);
+  border: 0;
+  border-radius: var(--radio-lg);
+}
+
+.pg-dialogo::backdrop { background: rgba(15, 27, 45, 0.55); }
+
+.pg-dialogo h2 {
+  margin: 0 0 8px;
+  font-size: 19px;
+}
+
+.pg-dialogo p {
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.pg-dialogo__botones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}

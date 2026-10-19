@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Practica · Mensajes fraudulentos · BPC 360</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/simulacion.css">
+</head>
+<body>
+  <div class="bpc-app">
+
+    <header class="bpc-pagina-header">
+      <div class="bpc-pagina-header__fila">
+        <a class="bpc-volver" href="modulo-sms.html" aria-label="Volver al módulo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+        </a>
+        <h1 class="bpc-pagina-header__titulo">Mensajes fraudulentos</h1>
+      </div>
+
+      <nav class="bpc-etapas" aria-label="Etapas del módulo">
+        <a href="modulo-sms.html">1 · Aprende</a>
+        <a href="simulacion.html" aria-current="step">2 · Practica</a>
+        <a href="modulo-sms.html#demuestra">3 · Demuestra</a>
+      </nav>
+    </header>
+
+    <main class="sim-main">
+
+      <!-- ===================== Práctica ===================== -->
+      <section id="sim-practica" class="sim-vista" aria-label="Práctica">
+
+        <div class="sim-estado">
+          <span id="sim-contador" aria-live="polite">Mensaje 1 de 5</span>
+          <span>Aciertos: <strong id="sim-aciertos">0</strong></span>
+        </div>
+
+        <p class="sim-contexto" id="sim-contexto" hidden></p>
+
+        <!-- Chat simulado -->
+        <section class="sim-chat" aria-label="Mensaje recibido">
+          <div class="sim-chat__cabecera">
+            <span class="sim-chat__avatar" id="sim-avatar" aria-hidden="true">?</span>
+            <span class="sim-chat__contacto">
+              <strong id="sim-remitente">—</strong>
+              <span id="sim-detalle"></span>
+            </span>
+            <span class="sim-chat__canal" id="sim-canal">SMS</span>
+          </div>
+          <div class="sim-chat__cuerpo">
+            <div class="sim-burbuja">
+              <p class="sim-burbuja__texto" id="sim-texto">Cargando mensaje…</p>
+              <span class="sim-burbuja__hora" id="sim-hora"></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Decisión -->
+        <div id="sim-decision" class="sim-decision">
+          <p class="sim-decision__pregunta">¿Este mensaje es seguro o es fraude?</p>
+          <div class="sim-decision__botones">
+            <button type="button" class="sim-btn sim-btn--seguro" id="sim-btn-seguro" disabled>Es seguro</button>
+            <button type="button" class="sim-btn sim-btn--fraude" id="sim-btn-fraude" disabled>Es fraude</button>
+          </div>
+        </div>
+
+        <p class="bpc-nota" id="sim-error" role="alert" hidden></p>
+
+        <!-- Retroalimentación -->
+        <div id="sim-feedback" class="sim-feedback" role="status" hidden>
+          <div class="sim-feedback__titulo">
+            <span id="sim-feedback-icono" aria-hidden="true"></span>
+            <span id="sim-feedback-veredicto"></span>
+          </div>
+          <p class="sim-feedback__era" id="sim-feedback-era"></p>
+          <p class="sim-feedback__texto" id="sim-feedback-texto"></p>
+          <p class="sim-feedback__subtitulo" id="sim-feedback-subtitulo" hidden>Señales (resaltadas en el mensaje):</p>
+          <ul class="sim-feedback__senales" id="sim-feedback-senales" hidden></ul>
+        </div>
+
+        <button type="button" class="bpc-btn bpc-btn--primario" id="sim-siguiente" hidden>Siguiente mensaje</button>
+      </section>
+
+      <!-- ===================== Resultado ===================== -->
+      <section id="sim-resultado" class="sim-vista" aria-labelledby="sim-resultado-titulo" hidden>
+        <div class="bpc-card sim-resultado__caja">
+          <h2 id="sim-resultado-titulo" tabindex="-1">Resumen de tu práctica</h2>
+          <p class="sim-resultado__aciertos" id="sim-resultado-aciertos"></p>
+          <p class="sim-resultado__puntos" id="sim-resultado-puntos"></p>
+          <p class="sim-resultado__insignia" id="sim-resultado-insignia" hidden></p>
+        </div>
+
+        <ul class="sim-repaso" id="sim-repaso" aria-label="Tus respuestas"></ul>
+
+        <a class="bpc-btn bpc-btn--primario" id="sim-ir-quiz" href="modulo-sms.html#demuestra">Ir al quiz</a>
+        <a class="bpc-btn bpc-btn--primario" id="sim-ir-progreso" href="progreso.html" hidden>Ver mi progreso</a>
+        <button type="button" class="bpc-btn bpc-btn--secundario" id="sim-repetir">Repetir práctica</button>
+      </section>
+
+    </main>
+
+    <nav class="bpc-nav" data-bpc-nav aria-label="Navegación principal"></nav>
+
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/simulacion.js"></script>
+</body>
+</html>

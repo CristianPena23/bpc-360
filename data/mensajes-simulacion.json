@@ -1,0 +1,101 @@
+{
+  "puntosPorAcierto": 10,
+  "minimoAprobar": 3,
+  "mensajes": [
+    {
+      "id": "pedido",
+      "canal": "SMS",
+      "remitente": "Tienda Aurora",
+      "detalle": "Contacto guardado",
+      "hora": "9:12",
+      "contexto": "Ayer hiciste una compra en Tienda Aurora.",
+      "partes": [
+        { "t": "Hola, tu pedido #4821 llega mañana entre 8 a. m. y 12 m. Puedes ver el seguimiento en la app de Tienda Aurora." }
+      ],
+      "esFraude": false,
+      "resumen": "Aviso de entrega de tu pedido",
+      "senales": [],
+      "explicacion": "Es seguro: esperabas el pedido, no te apura, no te pide datos ni claves y te manda a la app que ya tienes en vez de a un enlace. Aun así, si no hubieras comprado nada, lo correcto sería verificar directamente en la app."
+    },
+    {
+      "id": "banco",
+      "canal": "SMS",
+      "remitente": "+57 300 000 0000",
+      "detalle": "Número desconocido",
+      "hora": "9:40",
+      "partes": [
+        { "t": "BANCO ANDINO: Tu cuenta será " },
+        { "t": "BLOQUEADA hoy", "pista": true },
+        { "t": ". Verifica tus datos aquí: " },
+        { "t": "bit.ly/andino-verif", "enlace": true, "pista": true }
+      ],
+      "esFraude": true,
+      "resumen": "«Tu cuenta será bloqueada hoy»",
+      "senales": [
+        "Te presiona con un bloqueo «hoy»",
+        "Trae un enlace acortado",
+        "Un banco real no te pide verificar datos por un enlace en un mensaje"
+      ],
+      "explicacion": "Es fraude: usa la urgencia para que no pienses y te lleva a un enlace acortado que esconde la página real. Si te preocupa tu cuenta, entra tú mismo a la app del banco o llama a su línea oficial."
+    },
+    {
+      "id": "premio",
+      "canal": "WhatsApp",
+      "remitente": "+57 312 000 0000",
+      "detalle": "No está en tus contactos",
+      "hora": "11:03",
+      "partes": [
+        { "t": "¡Felicitaciones! Ganaste un bono de $500.000 en Almacenes Sol. ", "pista": true },
+        { "t": "Reclámalo en las próximas 2 horas", "pista": true },
+        { "t": " aquí: " },
+        { "t": "bit.ly/bono-sol-2026", "enlace": true, "pista": true }
+      ],
+      "esFraude": true,
+      "resumen": "Bono de $500.000 de Almacenes Sol",
+      "senales": [
+        "Premio de un sorteo en el que nunca participaste",
+        "Plazo muy corto para reclamarlo",
+        "Enlace acortado desde un número desconocido"
+      ],
+      "explicacion": "Es fraude: nadie regala un bono sin que hayas participado. El plazo de 2 horas busca que hagas clic antes de dudar, y el enlace probablemente te pedirá datos o un pago."
+    },
+    {
+      "id": "codigo",
+      "canal": "SMS",
+      "remitente": "85432",
+      "detalle": "Número corto",
+      "hora": "10:05",
+      "contexto": "Acabas de iniciar sesión en la app de tu banco y te pide un código.",
+      "partes": [
+        { "t": "Banco Andino: tu código de verificación es 482913. Úsalo solo en la app o la página oficial y no lo compartas con nadie. Si no lo pediste, ignora este mensaje." }
+      ],
+      "esFraude": false,
+      "resumen": "Código de verificación que tú pediste",
+      "senales": [],
+      "explicacion": "Es seguro porque TÚ lo pediste: llega de un número corto, no trae enlaces, no te apura y te recuerda no compartirlo. Si no lo hubieras pedido, ignóralo y cambia tu clave. Y recuerda: nadie, ni alguien que diga ser del banco, debe pedirte este código."
+    },
+    {
+      "id": "familiar",
+      "canal": "WhatsApp",
+      "remitente": "+57 311 000 0000",
+      "detalle": "Número nuevo",
+      "hora": "18:30",
+      "partes": [
+        { "t": "Hola, soy yo, " },
+        { "t": "cambié de número", "pista": true },
+        { "t": ". " },
+        { "t": "Estoy en un apuro", "pista": true },
+        { "t": ": ¿me haces una transferencia de $200.000? Te la devuelvo hoy. " },
+        { "t": "No me llames, no puedo hablar.", "pista": true }
+      ],
+      "esFraude": true,
+      "resumen": "«Soy yo, cambié de número»",
+      "senales": [
+        "Dice ser alguien conocido, pero escribe desde un número nuevo",
+        "Pide dinero con urgencia",
+        "Evita que lo llames para comprobar"
+      ],
+      "explicacion": "Es fraude: es la suplantación de un familiar o amigo. Antes de transferir, llama al número de siempre de esa persona o pregúntale algo que solo ella sabría."
+    }
+  ]
+}

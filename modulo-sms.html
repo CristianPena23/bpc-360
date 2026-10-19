@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mensajes fraudulentos · BPC 360</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/modulo.css">
+</head>
+<body>
+  <div class="bpc-app">
+
+    <header class="bpc-pagina-header">
+      <div class="bpc-pagina-header__fila">
+        <a class="bpc-volver" href="index.html" aria-label="Volver al inicio">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+        </a>
+        <h1 class="bpc-pagina-header__titulo">Mensajes fraudulentos</h1>
+      </div>
+
+      <nav class="bpc-etapas" aria-label="Etapas del módulo">
+        <button type="button" id="mod-tab-aprende" aria-current="step">1 · Aprende</button>
+        <a href="simulacion.html">2 · Practica</a>
+        <button type="button" id="mod-tab-demuestra">3 · Demuestra</button>
+      </nav>
+    </header>
+
+    <main class="mod-main">
+
+      <!-- ===================== 1 · APRENDE ===================== -->
+      <section id="mod-aprende" class="mod-vista" aria-label="Aprende">
+
+        <!-- Aquí puede ir el video corto del módulo en lugar de la ilustración -->
+        <figure class="mod-ilustracion">
+          <svg viewBox="0 0 320 150" role="img" aria-label="Ilustración de un mensaje sospechoso con un enlace y una alerta">
+            <rect width="320" height="150" rx="16" fill="#DBEAFE"></rect>
+            <rect x="30" y="26" width="190" height="68" rx="14" fill="#FFFFFF"></rect>
+            <rect x="46" y="42" width="120" height="8" rx="4" fill="#CBD5E1"></rect>
+            <rect x="46" y="58" width="150" height="8" rx="4" fill="#CBD5E1"></rect>
+            <rect x="46" y="74" width="92" height="8" rx="4" fill="#1D4ED8"></rect>
+            <circle cx="248" cy="46" r="26" fill="#FEF3C7"></circle>
+            <path d="M248 32l15 26h-30z" fill="none" stroke="#92400E" stroke-width="3" stroke-linejoin="round"></path>
+            <path d="M248 42v8M248 54v.5" stroke="#92400E" stroke-width="3" stroke-linecap="round"></path>
+            <rect x="120" y="106" width="150" height="28" rx="12" fill="#0F1B2D"></rect>
+            <rect x="136" y="116" width="80" height="8" rx="4" fill="#60A5FA"></rect>
+          </svg>
+        </figure>
+
+        <div class="mod-bloque">
+          <h2>¿Qué es el smishing?</h2>
+          <p>Es un engaño que llega por <strong>SMS o WhatsApp</strong>. El mensaje se hace pasar por un banco, una tienda o una entidad para que abras un enlace o entregues tus datos.</p>
+        </div>
+
+        <div class="mod-bloque">
+          <h2>Señales de alerta</h2>
+          <ul class="mod-senales">
+            <li>
+              <span class="mod-senales__icono" aria-hidden="true">!</span>
+              <span><strong>Te apura.</strong> «Tu cuenta se bloquea hoy». Quieren que actúes sin pensar.</span>
+            </li>
+            <li>
+              <span class="mod-senales__icono" aria-hidden="true">!</span>
+              <span><strong>Enlaces raros.</strong> Acortados (bit.ly…) o con nombres parecidos a los de tu banco, pero con errores.</span>
+            </li>
+            <li>
+              <span class="mod-senales__icono" aria-hidden="true">!</span>
+              <span><strong>Piden claves o códigos.</strong> Tu banco no te pide claves ni códigos por mensaje.</span>
+            </li>
+            <li>
+              <span class="mod-senales__icono" aria-hidden="true">!</span>
+              <span><strong>Premios que no pediste.</strong> Bonos o ayudas por sorteos en los que nunca participaste.</span>
+            </li>
+            <li>
+              <span class="mod-senales__icono" aria-hidden="true">!</span>
+              <span><strong>Remitente desconocido.</strong> Números nuevos, o alguien conocido que escribe desde «un número nuevo» pidiendo plata.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mod-bloque">
+          <h2>Qué hacer si te llega uno</h2>
+          <ol class="mod-pasos">
+            <li><strong>No abras el enlace ni respondas.</strong></li>
+            <li><strong>Verifica por un canal oficial</strong> que busques tú: la app o la línea de atención de la entidad, no los datos del mensaje.</li>
+            <li><strong>Bloquea el número y repórtalo</strong> en la misma app. Si hubo intento de estafa, denúncialo ante la Policía Nacional (CAI Virtual).</li>
+            <li><strong>Si ya diste datos:</strong> cambia tus claves desde la app oficial y llama a tu banco de inmediato.</li>
+          </ol>
+        </div>
+
+        <a class="bpc-btn bpc-btn--primario" href="simulacion.html">Ir a practicar</a>
+      </section>
+
+      <!-- ===================== 3 · DEMUESTRA (quiz) ===================== -->
+      <section id="mod-demuestra" class="mod-vista" aria-label="Demuestra" hidden>
+
+        <!-- Preguntas -->
+        <form id="mod-quiz-form" class="mod-quiz" novalidate>
+          <div class="mod-quiz__progreso">
+            <span id="mod-quiz-contador" aria-live="polite">Pregunta 1 de 3</span>
+          </div>
+
+          <fieldset class="mod-quiz__fieldset">
+            <legend class="mod-quiz__pregunta" id="mod-quiz-pregunta" tabindex="-1">Cargando preguntas…</legend>
+            <div class="mod-opciones" id="mod-quiz-opciones"></div>
+          </fieldset>
+
+          <div id="mod-quiz-feedback" class="mod-feedback" role="status" hidden></div>
+
+          <p class="bpc-nota" id="mod-quiz-error" role="alert" hidden></p>
+
+          <button type="submit" class="bpc-btn bpc-btn--primario" id="mod-quiz-boton" disabled>Comprobar</button>
+        </form>
+
+        <!-- Resultado -->
+        <div id="mod-quiz-resultado" class="mod-resultado" hidden>
+          <div class="bpc-card mod-resultado__caja">
+            <h2 id="mod-resultado-titulo" tabindex="-1">Resultado del quiz</h2>
+            <p class="mod-resultado__aciertos" id="mod-resultado-aciertos"></p>
+            <p class="mod-resultado__puntos" id="mod-resultado-puntos"></p>
+            <p class="mod-resultado__insignia" id="mod-resultado-insignia" hidden></p>
+          </div>
+
+          <a class="bpc-btn bpc-btn--primario" id="mod-resultado-progreso" href="progreso.html">Ver mi progreso</a>
+          <a class="bpc-btn bpc-btn--secundario" id="mod-resultado-practica" href="simulacion.html" hidden>Ir a practicar</a>
+          <button type="button" class="bpc-btn bpc-btn--secundario" id="mod-quiz-repetir">Repetir quiz</button>
+        </div>
+      </section>
+
+    </main>
+
+    <nav class="bpc-nav" data-bpc-nav aria-label="Navegación principal"></nav>
+
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/modulo.js"></script>
+</body>
+</html>
