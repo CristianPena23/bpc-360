@@ -1,0 +1,215 @@
+/* ==========================================================
+   BPC 360 · Pantalla de inicio (Andrés)
+   Clases con prefijo "ini-". Los colores y medidas vienen de
+   las variables de css/styles.css.
+   ========================================================== */
+
+/* ---------- Encabezado ---------- */
+
+.ini-header {
+  padding: 20px 20px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ini-marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ini-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--color-oscuro);
+  color: #FFFFFF;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ini-marca__nombre {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.ini-puntos {
+  min-height: 44px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primario-fuerte);
+  background: var(--color-primario-claro);
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+/* ---------- Contenido ---------- */
+
+.ini-main {
+  flex: 1;
+  padding: 8px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- Hero ---------- */
+
+.ini-hero {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--color-oscuro);
+  color: #FFFFFF;
+  border-radius: var(--radio-lg);
+}
+
+.ini-hero__etiqueta {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #93C5FD;
+}
+
+.ini-hero h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+.ini-hero__texto {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #CBD5E1;
+}
+
+.ini-hero .bpc-btn { margin-top: 4px; }
+
+.ini-hero__nivel {
+  margin: 0;
+  font-size: 14px;
+  color: #E2E8F0;
+}
+
+/* ---------- Módulos ---------- */
+
+.ini-seccion__cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ini-seccion__cabecera h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.ini-seccion__cabecera span {
+  font-size: 13px;
+  color: var(--color-texto-suave);
+}
+
+.ini-modulos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ini-modulo {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--color-texto);
+  text-decoration: none;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde-suave);
+  border-radius: var(--radio-md);
+}
+
+.ini-modulo__icono {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  border-radius: var(--radio-sm);
+  background: var(--color-primario-claro);
+  color: var(--color-primario-fuerte);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ini-modulo__texto {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ini-modulo__titulo {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ini-modulo__meta {
+  font-size: 13px;
+  color: var(--color-texto-suave);
+}
+
+.ini-modulo__estado {
+  flex: none;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primario-fuerte);
+  background: var(--color-primario-claro);
+  border-radius: 999px;
+}
+
+/* Módulo disponible */
+.ini-modulo--activo {
+  border: 2px solid var(--color-primario);
+  padding: 15px;
+}
+
+/* Módulo ya completado */
+.ini-modulo--completado .ini-modulo__estado {
+  color: var(--color-bajo-texto);
+  background: var(--color-bajo-fondo);
+}
+
+/* Módulo bloqueado: sin opacidad para no perder contraste del texto */
+.ini-modulo--bloqueado {
+  background: #F1F5F9;
+}
+
+.ini-modulo--bloqueado .ini-modulo__icono {
+  background: var(--color-borde-suave);
+  color: var(--color-texto-suave);
+}
+
+.ini-modulo--bloqueado .ini-modulo__candado {
+  flex: none;
+  color: var(--color-texto-suave);
+}

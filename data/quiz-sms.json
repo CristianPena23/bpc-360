@@ -1,0 +1,42 @@
+{
+  "puntosPorAcierto": 10,
+  "minimoAprobar": 2,
+  "preguntas": [
+    {
+      "id": "urgencia-enlace",
+      "texto": "Recibes este SMS: «BANCO ANDINO: tu cuenta será BLOQUEADA hoy. Verifica tus datos en bit.ly/andino-verif». ¿Cuál es la señal de alerta más clara?",
+      "opciones": [
+        "Que mencione el nombre de un banco",
+        "Que te presione con urgencia y traiga un enlace acortado",
+        "Que esté escrito en español",
+        "Que llegue en la mañana"
+      ],
+      "correcta": 1,
+      "explicacion": "Los estafadores usan la urgencia para que actúes sin pensar y esconden el destino real con enlaces acortados. Un banco de verdad no te pide verificar datos por un enlace en un mensaje."
+    },
+    {
+      "id": "premio",
+      "texto": "Una tienda te escribe por WhatsApp: «¡Ganaste un bono! Para reclamarlo paga solo el envío». Nunca participaste en ningún sorteo. ¿Qué haces?",
+      "opciones": [
+        "Pago el envío: es poco dinero",
+        "Respondo para preguntar de qué se trata",
+        "No pago; verifico con la tienda por su canal oficial y bloqueo el número",
+        "Comparto el mensaje con mis amigos para que también reclamen"
+      ],
+      "correcta": 2,
+      "explicacion": "Un premio que nunca pediste y que te cobra dinero es una trampa clásica. Lo seguro es no pagar, no responder y consultar a la tienda por un canal oficial que busques tú mismo."
+    },
+    {
+      "id": "ya-caiste",
+      "texto": "Abriste un enlace sospechoso y escribiste tu clave en la página. ¿Qué haces primero?",
+      "opciones": [
+        "Cambio la clave desde la app o página oficial y aviso a mi banco",
+        "Espero unos días a ver si pasa algo",
+        "Borro el mensaje y me olvido del tema",
+        "Reenvío el mensaje a mis contactos para advertirles"
+      ],
+      "correcta": 0,
+      "explicacion": "Cada minuto cuenta: quien tiene tu clave puede usarla ya. Cámbiala desde la app o el sitio oficial, y avisa a tu banco por su línea oficial para que bloquee movimientos sospechosos."
+    }
+  ]
+}

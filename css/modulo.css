@@ -1,0 +1,317 @@
+/* ==========================================================
+   BPC 360 · Módulo SMS / WhatsApp: Aprende y Demuestra (Camilo)
+   Clases con prefijo "mod-". Los colores y medidas vienen de las
+   variables de css/styles.css.
+   ========================================================== */
+
+.mod-main {
+  flex: 1;
+  padding: 12px 20px 24px;
+}
+
+.mod-vista {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- Aprende ---------- */
+
+.mod-ilustracion {
+  margin: 0;
+}
+
+.mod-ilustracion svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radio-md);
+}
+
+.mod-bloque h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.mod-bloque p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #334155;
+}
+
+.mod-senales,
+.mod-pasos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mod-senales li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #334155;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde-suave);
+  border-radius: var(--radio-sm);
+}
+
+.mod-senales li strong { color: var(--color-texto); }
+
+.mod-senales__icono {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--color-medio-texto);
+  background: var(--color-medio-fondo);
+  border-radius: 8px;
+}
+
+.mod-pasos { counter-reset: paso; }
+
+.mod-pasos li {
+  counter-increment: paso;
+  position: relative;
+  padding: 2px 0 2px 44px;
+  min-height: 32px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.mod-pasos li strong { color: var(--color-texto); }
+
+.mod-pasos li::before {
+  content: counter(paso);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--color-primario-fuerte);
+  background: var(--color-primario-claro);
+  border-radius: 50%;
+}
+
+/* ---------- Demuestra: quiz ---------- */
+
+.mod-quiz {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mod-quiz__progreso {
+  font-size: 13px;
+  color: var(--color-texto-suave);
+}
+
+.mod-quiz__fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.mod-quiz__pregunta {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 20px;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.35;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde-suave);
+  border-radius: var(--radio-lg);
+}
+
+.mod-quiz__pregunta:focus { outline: none; }
+.mod-quiz__pregunta:focus-visible { outline: 3px solid var(--color-primario-fuerte); outline-offset: 2px; }
+
+.mod-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mod-opcion {
+  position: relative;
+  display: block;
+}
+
+.mod-opcion input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.mod-opcion input:disabled { cursor: default; }
+
+.mod-opcion__caja {
+  min-height: 56px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.4;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 14px;
+}
+
+.mod-opcion__marca {
+  display: none;
+  flex: none;
+  color: var(--color-primario-fuerte);
+}
+
+.mod-opcion input:checked + .mod-opcion__caja {
+  background: var(--color-seleccion);
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 1px var(--color-primario);
+  font-weight: 500;
+}
+
+.mod-opcion input:checked + .mod-opcion__caja .mod-opcion__marca { display: block; }
+
+.mod-opcion input:focus-visible + .mod-opcion__caja {
+  outline: 3px solid var(--color-primario-fuerte);
+  outline-offset: 2px;
+}
+
+/* Después de comprobar */
+.mod-opcion--correcta input + .mod-opcion__caja,
+.mod-opcion--correcta input:checked + .mod-opcion__caja {
+  background: var(--color-bajo-fondo);
+  border-color: var(--color-bajo-texto);
+  box-shadow: 0 0 0 1px var(--color-bajo-texto);
+  font-weight: 500;
+}
+
+.mod-opcion--correcta .mod-opcion__marca {
+  display: block;
+  color: var(--color-bajo-texto);
+}
+
+.mod-opcion--incorrecta input + .mod-opcion__caja,
+.mod-opcion--incorrecta input:checked + .mod-opcion__caja {
+  background: var(--color-aviso-fondo);
+  border-color: var(--color-aviso-texto);
+  box-shadow: 0 0 0 1px var(--color-aviso-texto);
+}
+
+.mod-opcion--incorrecta .mod-opcion__marca {
+  display: block;
+  color: var(--color-aviso-texto);
+}
+
+/* Explicación */
+.mod-feedback {
+  scroll-margin-bottom: calc(var(--alto-nav) + 16px); /* que no la tape el menú */
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: var(--radio-md);
+  border: 1px solid transparent;
+}
+
+.mod-feedback__titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.mod-feedback p { margin: 0; color: #334155; }
+
+.mod-feedback--ok {
+  background: var(--color-bajo-fondo);
+  border-color: var(--color-bajo-texto);
+}
+.mod-feedback--ok .mod-feedback__titulo { color: var(--color-bajo-texto); }
+
+.mod-feedback--mal {
+  background: var(--color-aviso-fondo);
+  border-color: var(--color-aviso-borde);
+}
+.mod-feedback--mal .mod-feedback__titulo { color: var(--color-aviso-texto); }
+
+/* ---------- Resultado ---------- */
+
+.mod-resultado {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mod-resultado__caja {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 28px 22px;
+}
+
+.mod-resultado__caja h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.mod-resultado__caja h2:focus { outline: none; }
+
+.mod-resultado__aciertos {
+  margin: 0;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--color-primario-fuerte);
+}
+
+.mod-resultado__puntos,
+.mod-resultado__insignia {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.mod-resultado__insignia {
+  padding: 10px 14px;
+  font-weight: 600;
+  color: var(--color-bajo-texto);
+  background: var(--color-bajo-fondo);
+  border-radius: var(--radio-sm);
+}
+
+.mod-resultado__insignia--pendiente {
+  color: var(--color-medio-texto);
+  background: var(--color-medio-fondo);
+}

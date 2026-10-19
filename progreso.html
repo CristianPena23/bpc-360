@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi progreso · BPC 360</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/progreso.css">
+</head>
+<body>
+  <div class="bpc-app">
+
+    <header class="pg-header">
+      <h1 class="pg-header__titulo" id="pg-titulo" tabindex="-1">Mi progreso</h1>
+    </header>
+
+    <main class="pg-main">
+
+      <!-- Puntaje y avance de módulos -->
+      <section class="pg-resumen" aria-label="Resumen">
+        <div class="pg-resumen__puntos">
+          <strong id="pg-puntos">0</strong>
+          <span>puntos</span>
+        </div>
+        <div class="pg-resumen__detalle">
+          <span class="pg-resumen__etiqueta">Puntaje 360</span>
+          <strong id="pg-modulos-texto">0 de 3 módulos completados</strong>
+          <div class="pg-barra" id="pg-barra" role="progressbar" aria-label="Módulos completados" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0">
+            <div class="pg-barra__relleno" id="pg-barra-relleno"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nivel de riesgo -->
+      <section class="pg-nivel" id="pg-nivel" aria-labelledby="pg-nivel-etiqueta">
+        <div class="pg-nivel__texto">
+          <span class="pg-nivel__etiqueta" id="pg-nivel-etiqueta">Tu nivel de riesgo</span>
+          <span class="pg-nivel__valor" id="pg-nivel-valor">Aún no hiciste el diagnóstico</span>
+        </div>
+        <span class="pg-nivel__insignia" id="pg-nivel-icono" aria-hidden="true"></span>
+      </section>
+      <a class="pg-nivel__enlace" id="pg-nivel-enlace" href="diagnostico.html">Hacer diagnóstico</a>
+
+      <!-- Insignias -->
+      <section aria-labelledby="pg-insignias-titulo">
+        <h2 class="pg-subtitulo" id="pg-insignias-titulo">Insignias</h2>
+        <ul class="pg-insignias" id="pg-insignias"></ul>
+      </section>
+
+      <!-- Módulos -->
+      <section aria-labelledby="pg-modulos-titulo">
+        <h2 class="pg-subtitulo" id="pg-modulos-titulo">Módulos</h2>
+        <ul class="pg-modulos" id="pg-modulos"></ul>
+      </section>
+
+      <!-- Reiniciar -->
+      <p class="bpc-nota" id="pg-aviso" role="status" hidden>Tu progreso se reinició. ¡Puedes empezar de nuevo!</p>
+      <button type="button" class="bpc-btn bpc-btn--secundario" id="pg-reiniciar">Reiniciar progreso</button>
+
+    </main>
+
+    <nav class="bpc-nav" data-bpc-nav aria-label="Navegación principal"></nav>
+
+  </div>
+
+  <!-- Confirmación para reiniciar -->
+  <dialog class="pg-dialogo" id="pg-dialogo" aria-labelledby="pg-dialogo-titulo">
+    <form method="dialog">
+      <h2 id="pg-dialogo-titulo">¿Reiniciar tu progreso?</h2>
+      <p>Se borrarán tus puntos, tus insignias y el resultado del diagnóstico. Esto no se puede deshacer.</p>
+      <div class="pg-dialogo__botones">
+        <button type="submit" class="bpc-btn bpc-btn--secundario" value="cancelar" id="pg-cancelar">Cancelar</button>
+        <button type="submit" class="bpc-btn bpc-btn--primario" value="confirmar" id="pg-confirmar">Sí, reiniciar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/storage.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/progreso.js"></script>
+</body>
+</html>

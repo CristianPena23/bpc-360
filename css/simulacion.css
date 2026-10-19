@@ -1,0 +1,340 @@
+/* ==========================================================
+   BPC 360 · Práctica: simulación de chat (Cristian)
+   Clases con prefijo "sim-". Los colores y medidas vienen de las
+   variables de css/styles.css.
+   ========================================================== */
+
+:root {
+  --sim-fondo-chat: #E9EEF4;
+  --sim-fraude: #C2410C;       /* botón "Es fraude" (blanco sobre este color cumple contraste) */
+  --sim-marca: #FDE68A;        /* resalte de las pistas de fraude */
+}
+
+.sim-main {
+  flex: 1;
+  padding: 12px 20px 24px;
+}
+
+.sim-vista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ---------- Estado ---------- */
+
+.sim-estado {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--color-texto-suave);
+}
+
+.sim-estado strong { color: var(--color-texto); }
+
+.sim-contexto {
+  margin: 0;
+  padding: 10px 14px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--color-primario-fuerte);
+  background: var(--color-primario-claro);
+  border-radius: var(--radio-sm);
+}
+
+/* ---------- Chat ---------- */
+
+.sim-chat {
+  overflow: hidden;
+  background: var(--sim-fondo-chat);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-lg);
+}
+
+.sim-chat__cabecera {
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-superficie);
+  border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.sim-chat__avatar {
+  width: 38px;
+  height: 38px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  color: #334155;
+  background: var(--color-borde);
+  border-radius: 50%;
+}
+
+.sim-chat__contacto {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sim-chat__contacto strong {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.sim-chat__contacto span {
+  font-size: 12px;
+  color: var(--color-texto-suave);
+}
+
+.sim-chat__canal {
+  flex: none;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-texto-suave);
+  background: var(--color-borde-suave);
+  border-radius: 999px;
+}
+
+.sim-chat__cuerpo {
+  padding: 16px 14px 20px;
+}
+
+.sim-burbuja {
+  max-width: 92%;
+  padding: 12px 14px;
+  background: var(--color-superficie);
+  border-radius: 4px 16px 16px 16px;
+}
+
+.sim-burbuja__texto {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.sim-burbuja__hora {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--color-texto-suave);
+}
+
+/* Enlace falso (no se puede tocar) */
+.sim-enlace {
+  color: var(--color-primario-fuerte);
+  text-decoration: underline;
+}
+
+/* Pistas reveladas después de responder */
+.sim-burbuja mark {
+  padding: 1px 2px;
+  color: inherit;
+  background: var(--sim-marca);
+  border-radius: 3px;
+}
+
+/* ---------- Decisión ---------- */
+
+.sim-decision__pregunta {
+  margin: 4px 0 12px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sim-decision__botones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.sim-btn {
+  min-height: 52px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--radio-sm);
+  cursor: pointer;
+}
+
+.sim-btn--seguro {
+  color: var(--color-texto);
+  background: var(--color-superficie);
+  border: 2px solid var(--color-borde);
+}
+
+.sim-btn--fraude {
+  color: #FFFFFF;
+  background: var(--sim-fraude);
+  border: 2px solid var(--sim-fraude);
+}
+
+.sim-btn:disabled { cursor: not-allowed; opacity: 0.6; }
+
+/* ---------- Retroalimentación ---------- */
+
+.sim-feedback {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-margin-bottom: calc(var(--alto-nav) + 16px);
+  background: var(--color-superficie);
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-md);
+}
+
+.sim-feedback--ok {
+  background: var(--color-bajo-fondo);
+  border-color: var(--color-bajo-texto);
+}
+
+.sim-feedback--mal {
+  background: var(--color-aviso-fondo);
+  border-color: var(--color-aviso-texto);
+}
+
+.sim-feedback__titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sim-feedback--ok .sim-feedback__titulo { color: var(--color-bajo-texto); }
+.sim-feedback--mal .sim-feedback__titulo { color: var(--color-aviso-texto); }
+
+.sim-feedback__era {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sim-feedback__texto {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.sim-feedback__subtitulo {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sim-feedback__senales {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+/* ---------- Resultado ---------- */
+
+.sim-resultado__caja {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 28px 22px;
+}
+
+.sim-resultado__caja h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.sim-resultado__caja h2:focus { outline: none; }
+
+.sim-resultado__aciertos {
+  margin: 0;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--color-primario-fuerte);
+}
+
+.sim-resultado__puntos,
+.sim-resultado__insignia {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.sim-resultado__insignia {
+  padding: 10px 14px;
+  font-weight: 600;
+  color: var(--color-bajo-texto);
+  background: var(--color-bajo-fondo);
+  border-radius: var(--radio-sm);
+}
+
+.sim-resultado__insignia--pendiente {
+  color: var(--color-medio-texto);
+  background: var(--color-medio-fondo);
+}
+
+.sim-repaso {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sim-repaso li {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde-suave);
+  border-radius: var(--radio-sm);
+}
+
+.sim-repaso__icono {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.sim-repaso__icono--ok {
+  color: var(--color-bajo-texto);
+  background: var(--color-bajo-fondo);
+}
+
+.sim-repaso__icono--mal {
+  color: var(--color-aviso-texto);
+  background: var(--color-aviso-fondo);
+}
+
+.sim-repaso__texto {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sim-repaso__texto span {
+  font-size: 12px;
+  color: var(--color-texto-suave);
+}
