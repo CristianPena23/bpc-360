@@ -1,0 +1,90 @@
+{
+  "preguntas": [
+    {
+      "id": "wifi",
+      "icono": "wifi",
+      "texto": "¿Te conectas a redes WiFi públicas (centros comerciales, parques, estaciones) sin contraseña?",
+      "opciones": [
+        { "texto": "Nunca; uso mis datos móviles", "puntos": 0 },
+        { "texto": "Solo para ver redes sociales o videos", "puntos": 1 },
+        { "texto": "Sí, y a veces reviso mi correo o mis cuentas", "puntos": 2 },
+        { "texto": "Sí, siempre; incluso hago pagos o transferencias", "puntos": 3 }
+      ]
+    },
+    {
+      "id": "qr",
+      "icono": "qr",
+      "texto": "Cuando ves un código QR en un paradero, restaurante o parqueadero, ¿qué haces?",
+      "opciones": [
+        { "texto": "Siempre reviso a qué página me lleva antes de abrirla", "puntos": 0 },
+        { "texto": "Lo escaneo solo si el lugar me parece de confianza", "puntos": 1 },
+        { "texto": "Lo escaneo sin revisar a dónde me lleva", "puntos": 2 },
+        { "texto": "Lo escaneo y, si me piden datos o un pago, los lleno", "puntos": 3 }
+      ]
+    },
+    {
+      "id": "mensajes",
+      "icono": "mensaje",
+      "texto": "Te llega un SMS o WhatsApp de un número desconocido con un enlace. ¿Qué haces?",
+      "opciones": [
+        { "texto": "Lo ignoro o bloqueo el número sin abrir el enlace", "puntos": 0 },
+        { "texto": "Reviso el enlace con cuidado antes de decidir", "puntos": 1 },
+        { "texto": "Abro el enlace por curiosidad, pero no pongo datos", "puntos": 2 },
+        { "texto": "Abro el enlace y sigo las instrucciones del mensaje", "puntos": 3 }
+      ]
+    },
+    {
+      "id": "claves",
+      "icono": "clave",
+      "texto": "¿Cómo manejas tus contraseñas?",
+      "opciones": [
+        { "texto": "Una distinta por cuenta y con verificación en dos pasos", "puntos": 0 },
+        { "texto": "Distintas, pero solo en las cuentas más importantes", "puntos": 1 },
+        { "texto": "La misma, o variaciones parecidas, en varias cuentas", "puntos": 2 },
+        { "texto": "Una sola y fácil de recordar (fecha, nombre) para todo", "puntos": 3 }
+      ]
+    },
+    {
+      "id": "codigos",
+      "icono": "llamada",
+      "texto": "Alguien te llama diciendo que es de tu banco y te pide el código que llegó a tu celular. ¿Qué haces?",
+      "opciones": [
+        { "texto": "Cuelgo y llamo yo al número oficial del banco", "puntos": 0 },
+        { "texto": "Desconfío, pero sigo en la llamada para ver qué dicen", "puntos": 1 },
+        { "texto": "Le doy algunos datos si parece que sabe cosas de mí", "puntos": 2 },
+        { "texto": "Le doy el código para que me ayude a resolver el problema", "puntos": 3 }
+      ]
+    },
+    {
+      "id": "actualizaciones",
+      "icono": "actualizar",
+      "texto": "¿Con qué frecuencia actualizas tu celular y de dónde descargas tus aplicaciones?",
+      "opciones": [
+        { "texto": "Actualizo apenas puedo y solo uso tiendas oficiales", "puntos": 0 },
+        { "texto": "Actualizo de vez en cuando y uso tiendas oficiales", "puntos": 1 },
+        { "texto": "Casi nunca actualizo", "puntos": 2 },
+        { "texto": "No actualizo y a veces instalo apps desde enlaces o sitios no oficiales", "puntos": 3 }
+      ]
+    }
+  ],
+  "niveles": [
+    {
+      "id": "bajo",
+      "max": 5,
+      "titulo": "Riesgo bajo",
+      "descripcion": "Tienes buenos hábitos digitales. Aun así, los fraudes cambian rápido: el módulo te ayudará a reconocer engaños nuevos."
+    },
+    {
+      "id": "medio",
+      "max": 11,
+      "titulo": "Riesgo medio",
+      "descripcion": "Algunos de tus hábitos te dejan expuesto a engaños comunes. Con un poco de práctica puedes cerrar esas brechas."
+    },
+    {
+      "id": "alto",
+      "max": 18,
+      "titulo": "Riesgo alto",
+      "descripcion": "Hoy sería fácil que alguien te engañe. La buena noticia es que unos pocos cambios reducen mucho el riesgo."
+    }
+  ]
+}
